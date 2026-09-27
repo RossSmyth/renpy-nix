@@ -1,0 +1,28 @@
+# renpy-nix
+
+Packages up Ren'py game with Nix
+
+# Usage
+
+```nix
+buildRenpyGame (finalAttrs: {
+  pname = "two-kinds-of-people";
+  version = "1.0";
+  gameName = "Two Kinds of People";
+  
+  # Often the easiest thing to do is put this here, but just download it
+  # in your browser and add the archive to the store with
+  # `nix store add-file ./blah.zip`
+  #
+  # The other option is to enter this, then follow the instructions when it
+  # fails since it requires an API key to run.
+  src = fetchItchIo {
+    name = "tkop-${finalAttrs.version}-pc.zip";
+    gameUrl = "https://lacunova.itch.io/tkop";
+    upload = "18254531";
+    hash = "sha256-y0to2H0kXzQsOjI97IYz8sOzJBa8KQlbvN6wh6l+PtA=";
+  };
+})
+```
+
+Will create a `.desktop` file so the game can be launched easily.
