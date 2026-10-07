@@ -13,9 +13,9 @@ body:
   - type: "input"
     id: "press-version"
     attributes:
-      label: "Press version"
+      label: "renpy-nix version"
       description: |
-        What version of Press are you using? Please post the exact commit. This is often pinned via flakes.
+        What version of renpy-nix are you using? Please post the exact commit. This is often pinned via npins.
     validations:
       required: true
   - type: "textarea"
