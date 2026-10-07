@@ -5,7 +5,9 @@ Packages up Ren'py game with Nix.
 Does a couple useful things:
 1. Compile the rpy files - reduces size
 2. Use Nixpkgs-provided Ren'py so it stays up-to-date
-3. Only packages essential files 
+3. Only packages essential files
+4. Add .desktop file
+5. Makes wrapper binary for launching
 
 Generally Ren'py games vendor Ren'py in their distribution. This removes the vendored Ren'py so that it is deduplicated, and stays up to date. Works well, [here's some I've used it for to play](https://github.com/RossSmyth/nur/blob/13c6f0d9312b625be94225350f6a81a82dc647eb/default.nix#L59-L67).
 
