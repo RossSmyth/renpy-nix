@@ -5,6 +5,16 @@ Packages up Ren'py game with Nix
 # Usage
 
 ```nix
+let
+  inputs = import ./npins { };
+  pkgs = import inputs.nixpkgs {
+    overlays = [
+      (import inputs.renpy-nix)
+    ];
+  };
+
+  inherit (pkgs) buildRenpyGame fetchItchIo;
+in
 buildRenpyGame (finalAttrs: {
   pname = "two-kinds-of-people";
   version = "1.0";
